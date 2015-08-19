@@ -2,6 +2,7 @@
 # vim: autoindent tabstop=2 shiftwidth=2 expandtab softtabstop=2 filetype=ruby
 
 require 'sinatra'
+set :bind, '0.0.0.0'
 
 get '/' do
   @title = 'SecCI'
