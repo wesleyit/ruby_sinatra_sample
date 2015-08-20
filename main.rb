@@ -6,20 +6,21 @@ set :bind, '0.0.0.0'
 
 get '/' do
   @title = 'SecCI'
-  @subtitle = 'Yo, man! We do tha motha fuckin\' security!'
+  @subtitle = 'Yo, man! We do tha mutha fuckin\' security!'
   erb :index
 end
 
 post '/login' do
   @title = 'SecCI'
-  @subtitle = 'It is so SecCI!!!'
   @login = @params['login']
   @password = @params['password']
   if @login == 'admin' && @password == 'teste123'
+    @subtitle = 'Wow, you are so SecCI!!!'
     @message = 'Success!'
     @image = 'success.jpg'
   else
-    @message = 'Failure'
+    @subtitle = 'Get you fuckin ass outta here!!!'
+    @message = 'Failure!'
     @image = 'failure.jpg'
   end
   erb :auth
